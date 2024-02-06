@@ -1,20 +1,6 @@
-<div>
-    <h1>Edit Barang</h1>
-    <form method="post" action="{{ route('barang.update', [ 'id' => $barang->id ]) }}">
-        @csrf
-        <div>
-            <label>Nama</label>
-            <input type="text" name="nama" value="{{ old('nama') ?? $barang->nama }}"/>
-        </div>
-        <div>
-            <label>Harga</label>
-            <input type="text" name="harga" value="{{ old('harga') ?? $barang->harga }}" />
-        </div>
-        <div>
-            <input type="submit" value="Simpan" />
-            <a href="{{ route('barang.index') }}"><input type="button" value="Batal" /></a>
-        </div>
-    </form>
+<x-base-app>
+    <x-header>Edit Barang</x-header>
+    <x-barang.Form action="{{  route('barang.update', [ 'id' => $barang->id ]) }}" :barang="$barang"></x-barang.Form>
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -24,4 +10,4 @@
         </ul>
     </div>
     @endif
-</div>
+</x-base-app>

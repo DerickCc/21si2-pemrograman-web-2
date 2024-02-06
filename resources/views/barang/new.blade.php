@@ -1,7 +1,8 @@
 <x-base-app>
 <div class="p-4 overflow-auto">
     <x-header>New Barang</x-header>
-    <form method="post" action="{{ route('barang.create') }}" class="grid grid-cols-1 gap-y-2">
+    <x-barang.Form action="{{ route('barang.create') }}"></x-barang.Form>
+    {{-- <form method="post" action="{{ route('barang.create') }}" class="grid grid-cols-1 gap-y-2">
         @csrf
         <div class="grid grid-cols-2">
             <label>Nama</label>
@@ -15,7 +16,7 @@
             <input type="submit" value="Simpan" class="border-blue-500 border bg-blue-500 text-white font-semibold p-2"/>
             <a href="{{ route('barang.index') }}"><input type="button" value="Batal" class="border-blue-500 border text-blue-500 font-semibold p-2" /></a>
         </div>
-    </form>
+    </form> --}}
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
